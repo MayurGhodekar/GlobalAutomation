@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ga-primary: #0d6efd;
+  --ga-secondary: #6c757d;
+  --ga-bg: #f8f9fa;
+  --ga-text: #212529;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ga-text);
+  background-color: var(--ga-bg);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.btn-primary {
+  background-color: var(--ga-primary);
+  border-color: var(--ga-primary);
+}
+
+.btn-secondary {
+  background-color: var(--ga-secondary);
+  border-color: var(--ga-secondary);
+}

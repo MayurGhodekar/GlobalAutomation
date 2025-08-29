@@ -1,0 +1,7 @@
+main {
+  padding-top: 56px; /* Height of the navbar */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

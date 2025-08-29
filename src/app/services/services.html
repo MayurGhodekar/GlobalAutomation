@@ -1,0 +1,18 @@
+<div class="services-container">
+  <div class="services-header">
+    <h1>Our Services</h1>
+    <p>Comprehensive automation solutions for every industrial need.</p>
+  </div>
+
+  <div class="services-grid">
+    @for (service of services; track service.title) {
+      <div class="card">
+        <img [ngSrc]="service.imageUrl" class="card-img-top" alt="{{ service.title }}" width="300" height="200">
+        <div class="card-body">
+          <h5 class="card-title">{{ service.title }}</h5>
+          <p class="card-text">{{ service.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
