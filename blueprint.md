@@ -14,9 +14,9 @@ This document outlines the design, features, and implementation of the Global Au
 ## Features
 
 - **Home Page:** A welcoming landing page with a hero section, a brief introduction to the company, and a call-to-action.
-- **About Us:** A page dedicated to the company's mission, vision, and team.
+- **About Us:** An expanded page with a mission statement, vision, and more detailed company information. The layout has been improved for better readability and visual appeal.
 - **Products:** A showcase of the company's product offerings, with images, descriptions, and model numbers.
-- **Services:** A detailed overview of the services offered by Global Automation.
+- **Services:** An enhanced services page featuring service images, a 'Learn More' button, a call-to-action section that directs users to the contact page, and interactive hover effects on service cards.
 - **Contact Us:** A user-friendly contact form with client-side validation and a map to the company's location.
 
 ## Implementation Details
@@ -31,4 +31,4 @@ This document outlines the design, features, and implementation of the Global Au
 
 ## Current Plan
 
-This is the initial version of the application. The current plan is to hand it off to the user to add their Firebase credentials and deploy it.
+The application is now feature-complete. The next step is to hand it off to the user to add their Firebase credentials and deploy it.

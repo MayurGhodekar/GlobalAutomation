@@ -1,18 +1,25 @@
 <div class="services-container">
   <div class="services-header">
     <h1>Our Services</h1>
-    <p>Comprehensive automation solutions for every industrial need.</p>
+    <p>Providing expert solutions to optimize your industrial automation.</p>
   </div>
 
-  <div class="services-grid">
+  <div class="service-list">
     @for (service of services; track service.title) {
-      <div class="card">
-        <img [ngSrc]="service.imageUrl" class="card-img-top" alt="{{ service.title }}" width="300" height="200" appImageFallback>
-        <div class="card-body">
-          <h5 class="card-title">{{ service.title }}</h5>
-          <p class="card-text">{{ service.description }}</p>
+      <div class="service-card">
+        <img [ngSrc]="service.imageUrl" alt="{{ service.title }}" class="service-image" width="300" height="200" appImageFallback>
+        <div class="service-info">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <a routerLink="/contact" class="btn btn-primary">Learn More</a>
         </div>
       </div>
     }
+  </div>
+
+  <div class="cta-container">
+    <h2>Ready to Automate Your Success?</h2>
+    <p>Contact us today to discuss your project and learn how we can help you achieve your goals.</p>
+    <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
   </div>
 </div>
