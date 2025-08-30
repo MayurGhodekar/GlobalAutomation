@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // A user can read their own document to check their role.
+    match /users/{userId} {
+      allow read: if request.auth.uid == userId;
+      // Admins can list and read all user documents.
+      allow list: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Rules for the contactMessages collection
+    match /contactMessages/{messageId} {
+      // Admins can read, write, and list all messages.
+      allow read, write, list: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+  }
+}

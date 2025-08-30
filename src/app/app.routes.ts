@@ -21,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'contact', 
     loadComponent: () => import('./contact/contact').then(m => m.ContactComponent)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin-routing').then(m => m.ADMIN_ROUTES)
   }
 ];

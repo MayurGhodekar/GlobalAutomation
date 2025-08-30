@@ -1,34 +1,32 @@
-# Global Automation Website Blueprint
+# My Global Auto App Blueprint
 
 ## Overview
 
-This document outlines the design, features, and implementation of the Global Automation company website. The site is a modern, single-page application (SPA) built with Angular, showcasing the company's products and services, and providing a seamless way for customers to get in touch.
+This document outlines the architecture and implementation of the My Global Auto application, a modern web application built with Angular. It leverages standalone components, signals for state management, and modern CSS for a visually appealing and interactive user experience.
 
-## Style and Design
+## Style, Design, and Features
 
-- **Theme:** Modern, professional, and industrial. The color palette is centered around a primary blue (`--ga-primary`), a secondary teal (`--ga-secondary`), and a dark gray for text.
-- **Layout:** Responsive and mobile-first. The layout uses CSS Grid and Flexbox for a flexible and adaptive design.
-- **Typography:** The `Roboto` font is used throughout the site, with a clear hierarchy for headings and body text.
-- **Iconography:** Font Awesome icons are used to enhance visual communication and user experience.
+### Core Technologies
 
-## Features
+*   **Angular v20+**: The application is built on the latest version of Angular, taking advantage of its newest features.
+*   **Standalone Components**: Every component, directive, and pipe is standalone, promoting a modular and streamlined architecture.
+*   **Signals**: Signals are used for reactive state management, ensuring efficient change detection and a predictable data flow.
+*   **New Control Flow**: The new `@` syntax for control flow (`@if`, `@for`, `@switch`) is used for more intuitive and readable templates.
+*   **Modern CSS**: The application uses modern, browser-native CSS for styling, with a focus on a clean, visually balanced layout and mobile responsiveness.
+*   **Firebase**: Firebase is used for backend services, including authentication and Firestore.
 
-- **Home Page:** A welcoming landing page with a hero section, a brief introduction to the company, and a call-to-action.
-- **About Us:** An expanded page with a mission statement, vision, and more detailed company information. The layout has been improved for better readability and visual appeal.
-- **Products:** A showcase of the company's product offerings, with images, descriptions, and model numbers.
-- **Services:** An enhanced services page featuring service images, a 'Learn More' button, a call-to-action section that directs users to the contact page, and interactive hover effects on service cards.
-- **Contact Us:** A user-friendly contact form with client-side validation and a map to the company's location.
+### Implemented Features
 
-## Implementation Details
+*   **Admin Section**: A secure admin section with login and dashboard functionality.
+    *   **Authentication**: Firebase Authentication is used to secure the admin panel. Only users with an "admin" role can access the dashboard.
+    *   **Routing**: The admin section has its own routing module with a login page and a protected dashboard page.
+    *   **Auth Guard**: An authentication guard (`authGuard`) protects the dashboard route, redirecting unauthenticated users to the login page.
+    *   **Message Management**:
+        *   **Display Messages**: The admin dashboard displays contact messages from Firestore.
+        *   **Delete Messages**: Admins can delete messages from the dashboard.
+        *   **Confirmation on Delete**: A confirmation dialog is shown before deleting a message to prevent accidental deletions.
 
-- **Framework:** Angular v20+
-- **State Management:** Angular Signals for reactive state management.
-- **Components:** All components are standalone, promoting a modular and maintainable architecture.
-- **Control Flow:** Uses the new `@` syntax for control flow in templates (`@if`, `@for`, `@switch`).
-- **Styling:** Modern, native CSS with custom properties for theming.
-- **Backend:** Firebase Firestore is used to store contact form submissions.
-- **Image Optimization:** `NgOptimizedImage` is used for all static images.
+## Future Enhancements
 
-## Current Plan
-
-The application is now feature-complete. The next step is to hand it off to the user to add their Firebase credentials and deploy it.
+*   **Mark as Read/Unread**: Implement a feature to mark messages as read or unread to help with organization.
+*   **Direct Reply**: Add a "Reply" button that opens the user's default email client with the sender's email address pre-filled.

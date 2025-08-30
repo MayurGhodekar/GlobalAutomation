@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </header>
+
+  <section class="messages-section">
+    <h2>Contact Messages</h2>
+    @if (messages().length > 0) {
+      <div class="messages-grid">
+        @for (message of messages(); track message.id) {
+          <div class="message-card">
+            <h3>From: {{ message.name }}</h3>
+            <p><strong>Email:</strong> {{ message.email }}</p>
+            <p><strong>Message:</strong> {{ message.message }}</p>
+            <p><strong>Sent:</strong> {{ message.timestamp | date:'medium' }}</p>
+            @if (messageToDelete() === message.id) {
+              <div class="confirmation">
+                <p>Are you sure?</p>
+                <button (click)="confirmDelete(message.id)" class="confirm-button">Yes</button>
+                <button (click)="cancelDelete()" class="cancel-button">No</button>
+              </div>
+            } @else {
+              <button (click)="requestDelete(message.id)" class="delete-button">Delete</button>
+            }
+          </div>
+        }
+      </div>
+    } @else {
+      <p>No messages to display.</p>
+    }
+  </section>
+</div>

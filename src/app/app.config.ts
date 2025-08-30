@@ -4,6 +4,7 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAvIfFeFKUJ-MDlKiKCQlZsw2lrWNRT1HI",
@@ -22,6 +23,7 @@ export const appConfig: ApplicationConfig = {
       scrollPositionRestoration: 'top'
     })),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ]
 };
