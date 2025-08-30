@@ -7,28 +7,54 @@
   <div class="contact-content">
     <div class="contact-form">
       <h2>Send us a Message</h2>
-      <form>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" formControlName="name">
+          @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+            <div class="error-message">Name is required.</div>
+          }
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" formControlName="email">
+          @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+            <div class="error-message">A valid email is required.</div>
+          }
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" rows="5" formControlName="message"></textarea>
+          @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+            <div class="error-message">Message is required.</div>
+          }
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        @switch (submissionStatus()) {
+          @case ('sending') {
+            <button type="submit" class="btn btn-primary" [disabled]="true">Sending...</button>
+          }
+          @case ('success') {
+            <div class="success-message">Your message has been sent successfully!</div>
+            <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+          }
+          @case ('error') {
+            <div class="error-message">There was an error sending your message. Please try again later.</div>
+            <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+          }
+          @default {
+            <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+          }
+        }
+
       </form>
     </div>
 
     <div class="contact-info">
       <h2>Contact Information</h2>
-      <p><i class="fas fa-map-marker-alt"></i> 123 Automation Lane, Tech City, 45678</p>
-      <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-      <p><i class="fas fa-envelope"></i> contact@globalautomation.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Industrial Parkway, Suite 456, Automation City, ST 12345</p>
+      <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+      <p><i class="fas fa-envelope"></i> sales@globalautomation.com</p>
       
       <h2>Follow Us</h2>
       <div class="social-links">

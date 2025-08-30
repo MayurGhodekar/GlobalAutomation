@@ -11,34 +11,24 @@ import { NgOptimizedImage } from '@angular/common';
 export class ServicesComponent {
   services = [
     {
-      title: 'Repairing and Maintanance of all types of industrial electronics items',
-      description: 'We provide expert repair and maintenance services for all types of industrial electronic equipment, ensuring minimal downtime and optimal performance.',
-      imageUrl: 'assets/images/services/service1.jpg'
+      title: 'Coffee Machine Sales & Repair',
+      description: 'We offer a wide range of coffee machines for sale and provide expert repair services to keep them brewing.',
+      imageUrl: 'https://images.unsplash.com/photo-1511920183353-3b2a5d5d37aa?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-      title: 'PLC, HMI & SCADA programming and commissioning',
-      description: 'Our team of experienced engineers can program and commission PLC, HMI, and SCADA systems to meet your specific requirements.',
-      imageUrl: 'assets/images/services/service2.jpg'
+      title: 'Inverter & VFD Repair',
+      description: 'Our technicians are skilled in repairing inverters and variable frequency drives (VFDs) from all major brands.',
+      imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-      title: 'Retrofitting of old machines with latest technology',
-      description: 'We can upgrade your old machinery with the latest technology, improving efficiency, safety, and productivity.',
-      imageUrl: 'assets/images/services/service3.jpg'
+      title: 'Servo Drives & Controllers Repair',
+      description: 'We provide comprehensive repair services for servo drives and controllers, ensuring precise and reliable operation.',
+      imageUrl: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-      title: 'Customized new panel manufacturing as per requirement',
-      description: 'We design and manufacture custom control panels for a wide range of industrial applications.',
-      imageUrl: 'assets/images/services/service4.jpg'
-    },
-    {
-      title: 'Servo and VFD drive commissioning',
-      description: 'We provide expert commissioning services for servo and VFD drives, ensuring optimal performance and reliability.',
-      imageUrl: 'assets/images/services/service5.jpg'
-    },
-    {
-      title: 'Annual maintanance contract for industries',
-      description: 'We offer annual maintenance contracts to keep your industrial automation systems running smoothly and prevent costly breakdowns.',
-      imageUrl: 'assets/images/services/service6.jpg'
+      title: 'HMI / PLC & Encoder Services',
+      description: 'We offer programming, commissioning, and repair services for HMIs, PLCs, and encoders.',
+      imageUrl: 'https://images.unsplash.com/photo-1555774698-0b77e0ab232f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ];
 }
