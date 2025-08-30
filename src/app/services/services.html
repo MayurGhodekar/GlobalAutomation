@@ -7,7 +7,7 @@
   <div class="services-grid">
     @for (service of services; track service.title) {
       <div class="card">
-        <img [ngSrc]="service.imageUrl" class="card-img-top" alt="{{ service.title }}" width="300" height="200">
+        <img [ngSrc]="service.imageUrl" class="card-img-top" alt="{{ service.title }}" width="300" height="200" appImageFallback>
         <div class="card-body">
           <h5 class="card-title">{{ service.title }}</h5>
           <p class="card-text">{{ service.description }}</p>

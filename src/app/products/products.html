@@ -7,7 +7,7 @@
   <div class="product-list">
     @for (product of products; track product.title) {
       <div class="product-card">
-        <img [ngSrc]="product.imageUrl" alt="{{ product.title }}" class="product-image" width="300" height="200">
+        <img [ngSrc]="product.imageUrl" alt="{{ product.title }}" class="product-image" width="300" height="200" appImageFallback>
         <div class="product-info">
           <h3>{{ product.title }}</h3>
           <p>{{ product.description }}</p>
